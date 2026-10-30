@@ -1,0 +1,66 @@
+{
+  "name": "@regenic/telegram-connector",
+  "version": "0.1.0",
+  "description": "Local-first Telegram user-client connector for Regenic, powered by TDLib.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "regenic": {
+    "plugin": true,
+    "catalogOrder": 80,
+    "id": "@regenic/telegram-connector",
+    "displayName": "Telegram",
+    "engines": {
+      "regenic": "1.0"
+    },
+    "contributes": {
+      "drivers": [
+        "telegramDriver"
+      ]
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "regenic-telegram": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test test/*.test.cjs",
+    "tdlib:build": "node scripts/build-tdlib.mjs",
+    "tdlib:smoke": "npm run build && node dist/tdlib-smoke.js"
+  },
+  "dependencies": {
+    "@napi-rs/keyring": "2.1.2",
+    "@regenic/connector-contract": "0.1.1",
+    "@regenic/plugin-host": "0.1.0",
+    "koffi": "3.3.5"
+  },
+  "devDependencies": {
+    "@regenic/connector-test-utils": "0.1.0",
+    "@types/node": "22.10.2",
+    "typescript": "5.7.2"
+  },
+  "overrides": {
+    "@regenic/connector-test-utils@0.1.0": {
+      "@regenic/connector-contract": "$@regenic/connector-contract"
+    }
+  }
+}
