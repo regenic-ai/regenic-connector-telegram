@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "@napi-rs/keyring": "2.1.2",
-    "@regenic/connector-contract": "0.1.1",
+    "@regenic/connector-contract": "0.2.0",
     "@regenic/plugin-host": "0.1.0",
     "koffi": "3.3.5"
   },

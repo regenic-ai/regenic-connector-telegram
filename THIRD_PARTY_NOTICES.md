@@ -2,7 +2,7 @@
 
 The connector uses the following direct runtime dependencies:
 
-- `@regenic/connector-contract` 0.1.1 — MIT License.
+- `@regenic/connector-contract` 0.2.0 — MIT License.
 - `@regenic/plugin-host` 0.1.0 — MIT License.
 - `@napi-rs/keyring` 2.1.2 — MIT License.
 - `koffi` 3.3.5 — MIT License.
